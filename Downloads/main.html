@@ -1,0 +1,45 @@
+// index.html 
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>一个简单WebRTC例子</title>
+		<!--  引入外来的css文件 -->
+		<link href="./css/main.css" rel="stylesheet" />
+	</head>
+	<body>
+		
+		<div>
+			<div>
+				<!--  打开摄像头服务 -->
+				<button type="button" id="start">Start</button>
+				<!-- 同一个主机的两个窗口建立连接 -->
+				<button type="button" id="call">Call</button>
+				<!-- 关闭连接操作 -->
+				<button id="hangup" disabled>HangUp</button>	
+			</div>
+			<div id="preview">
+				<div id="preview">
+								<div >
+									<!--  模拟本地 -->
+									<h2>Local:</h2>
+									<video id="localvideo" autoplay playsinline></video>
+									<h2>Local SDP:</h2>
+									<textarea id="offer"></textarea>
+								</div>
+								<div>
+									<!-- 模拟远端 -->
+									<h2>Remote:</h2>
+									<video id="remotevideo" autoplay playsinline></video>
+									<h2>Remote SDP:</h2>
+									<textarea id="answer"></textarea>
+							</div>
+					</div>
+			</div>
+		</div>
+			<!--  解决 浏览器适配问题 -->
+			<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script> 
+			<!-- 进行WebRTC通信的关键代码 -->
+			<script src="js/main.js"></script>
+	</body>
+</html>
